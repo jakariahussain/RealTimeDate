@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            background: rgb(217, 217, 221);
+            height: 100%;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        div#month {
+            background: orange;
+            color: #fff;
+            padding: 10px 50px;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 5px 5px 0 0;
+        }
+
+        div#day {
+            padding: 20px 0 5px 0;
+            color: #595353;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        div#date {
+            font-size: 60px;
+            font-weight: 700;
+            color: #595353;
+            padding-bottom: 5px;
+        }
+
+        div#year {
+            font-size: 18px;
+            padding-bottom: 17px;
+            color: #595353;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Real Time Date Upadate</h1>
+
+    <div class="container">
+        <div id="month"></div>
+        <div id="day"></div>
+        <div id="date"></div>
+        <div id="year"></div>
+    </div>
+
+    <script>
+        const lang = navigator.language;
+        let date = new Date()
+        //UI constent value
+
+        let monthName = date.toLocaleString(lang, {month: 'long'})
+        let dayName = date.toLocaleString(lang, {weekday: 'long'})
+        let dateName = date.getDate()
+        let yearName = date.getFullYear()
+
+        document.getElementById('month').innerHTML = monthName;
+        document.getElementById('day').innerHTML = dayName;
+        document.getElementById('date').innerHTML = dateName;
+        document.getElementById('year').innerHTML = yearName;
+    </script>
+
+</body>
+
+</html>
